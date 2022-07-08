@@ -4,6 +4,9 @@ import Button from "../components/Button";
 import CheckBox from "../components/CheckBox";
 import Illustration from "../components/Illustration";
 import InputText from "../components/InputText";
+import { useAuth } from "../contexts/AuthContext";
+import swal from "sweetalert";
+import { async } from "@firebase/util";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -12,16 +15,31 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agree, setAgree] = useState("");
 
-  const [error, setError] = useState();
-  const [loading, setLoading] = useState();
+  const { signUp } = useAuth();
 
-  console.log(username, email, password, confirmPassword);
+  // Handle Sign Up btn
+  const handleSingUp = (e) => {
+    e.preventDefault();
+    if (password === confirmPassword) {
+      signUp(username, email, password);
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+    } else {
+      swal({
+        title: "Password doesn't matched",
+        icon: "error",
+      });
+    }
+  };
+
   return (
     <>
       <h1 className="pageTitle">Create a new account!</h1>
       <div className="column">
         <Illustration />
-        <form action="">
+        <form onSubmit={handleSingUp}>
           <InputText
             type="text"
             placeholder="Enter name"
