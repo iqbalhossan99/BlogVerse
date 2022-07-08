@@ -1,0 +1,42 @@
+/* nav component */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-bottom: 1px solid #e5e5e5;
+    z-index: 1;
+    padding: 5px 0;
+  }
+  
+  .nav ul {
+    width: 50%;
+    height: 60px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav .brand  {
+    font-size: 50px;
+    text-decoration: none;
+  }
+  .nav ul  .navLink{
+    text-decoration: none;
+    color: #002333;
+  }
+  .nav ul  .navLink:hover{
+    color: #00299F;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    .nav .brand  {
+      font-size: 30px;
+    }
+  }

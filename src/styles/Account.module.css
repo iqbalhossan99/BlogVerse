@@ -1,0 +1,17 @@
+
+  /* Accounts */
+  .account {
+    /* width: 50%; */
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+    font-size: 16px;
+  }
+  
+  .account .signInSingUp {
+    text-decoration: none;
+    color: #00299F;
+    font-weight: 600;
+  }
