@@ -1,0 +1,27 @@
+.button {
+    background: var(--bgBlue);
+    color: var(--bodyBackground);
+    padding: 0.7rem 1.4rem;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0px;
+  }
+  
+  .button:hover {
+    background: var(--fontPrimary);
+    color: #fff;
+  }
+  
+  .button span {
+    color: var(--bodyBackground);
+  }
+  .button:hover span {
+    color: var(--bodyBackground);
+  }

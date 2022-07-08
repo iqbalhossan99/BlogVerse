@@ -23,16 +23,6 @@ const Nav = () => {
             Posts
           </Link>
         </li>
-        <li>
-          <Link to="/login" className={styles.navLink}>
-            Login
-          </Link>
-        </li>
-        <li>
-          <Link to="/singUp" className={styles.navLink}>
-            Sign Up
-          </Link>
-        </li>
       </ul>
       {/* SEARCH INPUT */}
       <InputText type="text" placeholder="Search" name="search" icon="search" />

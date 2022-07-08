@@ -18,12 +18,16 @@
     height: 60px;
     list-style: none;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+  }
+  .nav ul li{
+    padding: 0 15px;
+
   }
   
   .nav .brand  {
-    font-size: 50px;
+    font-size: 40px;
+    /* font-weight: 600; */
     text-decoration: none;
   }
   .nav ul  .navLink{

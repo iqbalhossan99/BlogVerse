@@ -28,7 +28,13 @@ const Account = () => {
           </p>
         </> */}
       <>
-        <Link to="/signup">Signup</Link>/<Link to="/login">Login</Link>
+        <Link className={styles.accountLink} to="/signUp">
+          Signup
+        </Link>
+        /
+        <Link className={styles.accountLink} to="/login">
+          Login
+        </Link>
       </>
     </div>
   );

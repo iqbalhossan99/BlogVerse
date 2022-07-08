@@ -10,8 +10,10 @@
     font-size: 16px;
   }
   
-  .account .signInSingUp {
+  .account .accountLink {
     text-decoration: none;
-    color: #00299F;
-    font-weight: 600;
+    color: var(--fontPrimary);
+  }
+  .account .accountLink:hover {
+    color: var(--bgBlue);
   }
