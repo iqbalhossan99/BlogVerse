@@ -26,6 +26,7 @@ const SignUp = () => {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      setAgree("");
     } else {
       swal({
         title: "Password doesn't matched",

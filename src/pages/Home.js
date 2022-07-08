@@ -4,7 +4,7 @@ import SignUp from "./SignUp";
 const Home = () => {
   return (
     <div>
-      <SignUp />
+      <h2>Home</h2>
     </div>
   );
 };

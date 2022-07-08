@@ -1,23 +1,28 @@
+import { async } from "@firebase/util";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import CheckBox from "../components/CheckBox";
 import Illustration from "../components/Illustration";
 import InputText from "../components/InputText";
+import { useAuth } from "../contexts/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signIn } = useAuth();
 
-  const [error, setError] = useState();
-  const [loading, setLoading] = useState();
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    signIn(email, password);
+  };
 
   return (
     <>
       <h1 className="pageTitle">Login To Your Account!</h1>
       <div className="column">
         <Illustration />
-        <form action="">
+        <form onSubmit={handleSignIn}>
           <InputText
             type="text"
             required

@@ -9,7 +9,7 @@ const Nav = () => {
       <ul>
         <li>
           <Link to="/" className={styles.brand}>
-            <em>BlogVerse</em>
+            <em>BVerse</em>
           </Link>
         </li>
         <li>
