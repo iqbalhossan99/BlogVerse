@@ -6,7 +6,6 @@ import Illustration from "../components/Illustration";
 import InputText from "../components/InputText";
 import { useAuth } from "../contexts/AuthContext";
 import swal from "sweetalert";
-import { async } from "@firebase/util";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
