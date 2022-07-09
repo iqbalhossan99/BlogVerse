@@ -4,11 +4,18 @@ import auth from "../firebase.init";
 import noAvatar from "../assets/images/noAvatar.png";
 import { format } from "timeago.js";
 import styles from "../styles/UserAvatar.module.css";
+import swal from "sweetalert";
 
 const UserAvatar = () => {
   const [user, loading, error] = useAuthState(auth);
   if (loading) {
     return;
+  }
+  if (error) {
+    swal({
+      title: `${error}`,
+      icon: "error",
+    });
   }
   const userAvatar = user?.photoURL;
   const uploadedTime = format(user?.metadata.createdAt);
