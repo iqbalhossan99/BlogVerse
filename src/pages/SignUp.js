@@ -6,6 +6,8 @@ import Illustration from "../components/Illustration";
 import InputText from "../components/InputText";
 import { useAuth } from "../contexts/AuthContext";
 import swal from "sweetalert";
+import SocialLogin from "../components/SocialLogin";
+import Divider from "../components/Divider";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -39,56 +41,62 @@ const SignUp = () => {
       <h1 className="pageTitle">Create a new account!</h1>
       <div className="column">
         <Illustration />
-        <form onSubmit={handleSingUp}>
-          <InputText
-            type="text"
-            placeholder="Enter name"
-            icon="person"
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+        <div>
+          <form onSubmit={handleSingUp}>
+            <InputText
+              type="text"
+              placeholder="Enter name"
+              icon="person"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
 
-          <InputText
-            type="text"
-            required
-            placeholder="Enter email"
-            icon="alternate_email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+            <InputText
+              type="text"
+              required
+              placeholder="Enter email"
+              icon="alternate_email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <InputText
-            type="password"
-            required
-            placeholder="Enter password"
-            icon="lock"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+            <InputText
+              type="password"
+              required
+              placeholder="Enter password"
+              icon="lock"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <InputText
-            type="password"
-            required
-            placeholder="Confirm password"
-            icon="lock_clock"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+            <InputText
+              type="password"
+              required
+              placeholder="Confirm password"
+              icon="lock_clock"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
 
-          <CheckBox
-            required
-            text="I agree to the Terms &amp; Conditions"
-            value={agree}
-            onChange={(e) => setAgree(e.target.value)}
-          />
-          <Button style={{ width: "100%", marginTop: "10px" }}>
-            <span>Sign Up</span>
-          </Button>
-          <div className="info">
-            Already have an account? <Link to="/login">Login</Link> instead.
-          </div>
-        </form>
+            <CheckBox
+              required
+              text="I agree to the Terms &amp; Conditions"
+              value={agree}
+              onChange={(e) => setAgree(e.target.value)}
+            />
+            <Button style={{ width: "100%", marginTop: "10px" }}>
+              <span>Sign Up</span>
+            </Button>
+            <div className="info">
+              Already have an account? <Link to="/login">Login</Link> instead.
+            </div>
+          </form>
+          {/* Divider */}
+          <Divider />
+          {/* Social login */}
+          <SocialLogin />
+        </div>
       </div>
     </>
   );

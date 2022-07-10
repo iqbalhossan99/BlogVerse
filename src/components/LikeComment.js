@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/LikeComment.module.css";
 
 const LikeComment = () => {
+  const [like, setLike] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLike = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
   return (
     <div className={styles.likeCommentContainer}>
       <div className={styles.left}>
-        <span className="material-icons-outlined">thumb_up</span>
-        <span className="material-icons-outlined">favorite_border</span>{" "}
-        <span className={styles.postLikeCounter}> people like it</span>
+        <span
+          onClick={handleLike}
+          className={`material-icons-outlined ${styles.lcIcon}`}
+        >
+          thumb_up
+        </span>
+        <span className={`material-icons-outlined ${styles.lcIcon}`}>
+          favorite_border
+        </span>
+        <span className={styles.postLikeCounter}> {like}</span>
       </div>
       <div className={styles.right}>
         <span className={styles.postCommentText}>Comments</span>
