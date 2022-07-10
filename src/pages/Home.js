@@ -3,6 +3,7 @@ import Posts from "../components/Posts";
 import LeftSidebar from "../components/LeftSidebar";
 import styles from "../styles/Home.module.css";
 import RightSidebar from "../components/RightSidebar";
+import SinglePost from "../components/SinglePost";
 
 const Home = () => {
   return (

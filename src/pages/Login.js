@@ -4,8 +4,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import CheckBox from "../components/CheckBox";
+import Divider from "../components/Divider";
 import Illustration from "../components/Illustration";
 import InputText from "../components/InputText";
+import SocialLogin from "../components/SocialLogin";
 import { useAuth } from "../contexts/AuthContext";
 import auth from "../firebase.init";
 
@@ -29,32 +31,40 @@ const Login = () => {
       <h1 className="pageTitle">Login To Your Account!</h1>
       <div className="column">
         <Illustration />
-        <form onSubmit={handleSignIn}>
-          <InputText
-            type="text"
-            required
-            placeholder="Enter email"
-            icon="alternate_email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+        <div>
+          {" "}
+          <form onSubmit={handleSignIn}>
+            <InputText
+              type="text"
+              required
+              placeholder="Enter email"
+              icon="alternate_email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <InputText
-            type="password"
-            required
-            placeholder="Enter password"
-            icon="lock"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+            <InputText
+              type="password"
+              required
+              placeholder="Enter password"
+              icon="lock"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <Button style={{ width: "100%", marginTop: "10px" }}>
-            <span>Log In</span>
-          </Button>
-          <div className="info">
-            Already have an account? <Link to="/signUp">Sing Up</Link> instead.
-          </div>
-        </form>
+            <Button style={{ width: "100%", marginTop: "10px" }}>
+              <span>Log In</span>
+            </Button>
+            <div className="info">
+              Already have an account? <Link to="/signUp">Sing Up</Link>{" "}
+              instead.
+            </div>
+          </form>
+          {/* Divider */}
+          <Divider />
+          {/* Social Login */}
+          <SocialLogin />
+        </div>
       </div>
     </>
   );

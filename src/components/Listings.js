@@ -8,8 +8,8 @@ const Listings = () => {
     <>
       <div className={styles.listsContainer}>
         <h3 className={styles.listTitle}>Listings</h3>
-        {ListingDAta.map((list) => (
-          <Link key={list} to={list.path}>
+        {ListingDAta.map((list, i) => (
+          <Link key={i} to={list.path}>
             <p className={styles.listName}>{list.listName}</p>
           </Link>
         ))}

@@ -1,0 +1,15 @@
+.dividerContainer{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.dividerLine{
+    width: 100%;
+    height: 4px;
+    background: #0A8BFE;
+    border-radius: 2px;
+}
+.or{
+    padding: 0 10px;
+}

@@ -17,3 +17,6 @@
     color: #404040;
   }
   
+  .listName:hover{
+    color: var(--bgBlue);
+  }
