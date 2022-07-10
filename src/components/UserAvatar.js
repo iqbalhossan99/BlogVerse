@@ -32,7 +32,7 @@ const UserAvatar = () => {
         <span className={styles.postDate}>{uploadedTime}</span>
       </div>
       <div className="avatarRight">
-        <span class="material-icons-outlined">more_horiz</span>
+        <span className="material-icons-outlined">more_horiz</span>
       </div>
     </div>
   );

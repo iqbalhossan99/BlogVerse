@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import Post from "./Post";
+import styles from "../styles/Posts.module.css";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -16,7 +17,7 @@ const Posts = () => {
       });
   }, []);
   return (
-    <div>
+    <div className={styles.feed}>
       {posts?.map((post) => (
         <Post key={post._id} post={post} />
       ))}

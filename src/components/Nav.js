@@ -12,17 +12,6 @@ const Nav = () => {
             <em>BVerse</em>
           </Link>
         </li>
-        <li>
-          <Link to="/" className={styles.navLink}>
-            Home
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/posts" className={styles.navLink}>
-            Posts
-          </Link>
-        </li>
       </ul>
       {/* SEARCH INPUT */}
       <InputText type="text" placeholder="Search" name="search" icon="search" />

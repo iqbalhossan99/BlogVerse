@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/Sidebar.module.css";
+import styles from "../styles/LeftSidebar.module.css";
 import { SidebarData } from "./sidebarData";
 
 const Sidebar = () => {
@@ -9,36 +9,36 @@ const Sidebar = () => {
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <>
-      <div className="text">
-        <div className={styles.navbar}>
+      <div className={styles.leftSidebar}>
+        {/* <div className={styles.navbar}>
           <Link to="#" className={styles.menuBars}>
-            <span onClick={showSidebar} class="material-icons-outlined">
+            <span onClick={showSidebar} className="material-icons-outlined">
               menu
             </span>
           </Link>
-        </div>
+        </div> */}
         <nav
           className={
             sidebar ? `${styles.navMenu} ${styles.active}` : `${styles.navMenu}`
           }
         >
           <ul className={styles.navMenuItems} onClick={showSidebar}>
-            <li className={styles.navbarToggle}>
+            {/* <li className={styles.navbarToggle}>
               <Link to="#" className={styles.menuBars}>
-                <span class="material-icons-outlined">close</span>{" "}
+                <span className="material-icons-outlined">close</span>{" "}
               </Link>
-            </li>
+            </li> */}
             {SidebarData.map((item, index) => {
               return (
-                <li key={index} className={styles.navText}>
+                <li key={index} className={styles.navItem}>
                   <Link to={item.path}>
                     <span
                       style={{ width: "24px" }}
-                      class="material-icons-outlined"
+                      className="material-icons-outlined"
                     >
                       {item.icon}
                     </span>
-                    <span>{item.title}</span>
+                    <span className={styles.navText}>{item.title}</span>
                   </Link>
                 </li>
               );
