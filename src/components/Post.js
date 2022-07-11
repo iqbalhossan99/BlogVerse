@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import UserAvatar from "./UserAvatar";
 import styles from "../styles/Post.module.css";
 import LikeComment from "./LikeComment";

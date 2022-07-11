@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "../styles/InputText.module.css";
 
-const InputText = ({ icon, ...rest }) => {
+const InputText = ({ icon, className, handleSearch, ...rest }) => {
   return (
-    <div className={styles.inputText}>
+    <div className={`${styles.inputText} ${className} `}>
       <input {...rest} />
-      <span className="material-icons-outlined"> {icon} </span>
+      <span onClick={handleSearch} className="material-icons-outlined">
+        {icon}
+      </span>
     </div>
   );
 };

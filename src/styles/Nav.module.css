@@ -14,7 +14,7 @@
   }
   
   .nav ul {
-    width: 50%;
+    /* width: 50%; */
     height: 60px;
     list-style: none;
     display: flex;
@@ -26,8 +26,8 @@
   }
   
   .nav .brand  {
-    font-size: 40px;
-    /* font-weight: 600; */
+    font-size: 30px;
+    font-weight: 600;
     text-decoration: none;
   }
   .nav ul  .navLink{
@@ -38,9 +38,16 @@
     color: #00299F;
   }
   
+  /* left nav */
+  .leftNav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
   
   @media only screen and (max-width: 600px) {
-    .nav .brand  {
+    /* .nav .brand  {
       font-size: 30px;
-    }
+    } */
   }
