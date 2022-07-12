@@ -4,17 +4,3 @@
 .createPostTitle{
     font-size: 30px !important;
 }
-.textArea{
-    width: 100%;
-    border: 0;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    height: 300px;
-    font-family: inherit;
-    font-size: 20px;
-}
-
-.textArea:focus{
-    outline-style: none;
-}

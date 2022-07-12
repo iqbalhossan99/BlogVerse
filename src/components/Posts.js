@@ -5,6 +5,7 @@ import usePosts from "../hooks/usePosts";
 
 const Posts = () => {
   const { posts } = usePosts();
+  // console.log(posts);
   return (
     <div className={styles.feed}>
       {posts?.map((post) => (

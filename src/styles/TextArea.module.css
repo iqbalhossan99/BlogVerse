@@ -1,0 +1,15 @@
+
+.textArea{
+    width: 100%;
+    border: 2px solid #d3caca !important;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    height: 300px;
+    font-family: inherit;
+    font-size: 20px;
+}
+
+.textArea:focus{
+    outline-style: none;
+}

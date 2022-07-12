@@ -5,6 +5,7 @@ import styles from "../styles/CreatePost.module.css";
 import swal from "sweetalert";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
+import TextArea from "../components/TextArea";
 
 const CreatePost = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -30,6 +31,7 @@ const CreatePost = () => {
       desc: desc,
     };
 
+    // handle the error
     if (createdPost.title === postTitle || createdPost.index === 0) {
       swal({ title: "Please try with another title!", icon: "error" });
     }
@@ -101,8 +103,7 @@ const CreatePost = () => {
           value={user?.displayName}
           disabled={user?.displayName}
         />
-        <textarea
-          className={styles.textArea}
+        <TextArea
           placeholder="Description..."
           type="text"
           required
