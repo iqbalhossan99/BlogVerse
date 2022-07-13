@@ -28,3 +28,7 @@
   .postDate{
       font-size: 12px;
   }
+
+  .viewIcon{
+    cursor: pointer;
+  }

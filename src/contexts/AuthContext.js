@@ -7,6 +7,7 @@ import {
   useSignInWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import auth from "../firebase.init";
 
@@ -25,6 +26,8 @@ const AuthProvider = ({ children }) => {
 
   const [signInWithEmailAndPassword, loginUser, loginLoading, loginError] =
     useSignInWithEmailAndPassword(auth);
+
+  const navigate = useNavigate();
 
   //   Loading
   if (loading || updating || sending || loginLoading) {
@@ -46,6 +49,7 @@ const AuthProvider = ({ children }) => {
       displayName: username,
     });
     await sendEmailVerification();
+    await navigate("/");
     await swal({
       title: "User Created",
       icon: "success",

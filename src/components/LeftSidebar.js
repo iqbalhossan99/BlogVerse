@@ -4,30 +4,11 @@ import styles from "../styles/LeftSidebar.module.css";
 import { SidebarData } from "./sidebarData";
 
 const Sidebar = () => {
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
   return (
     <>
       <div className={styles.leftSidebar}>
-        {/* <div className={styles.navbar}>
-          <Link to="#" className={styles.menuBars}>
-            <span onClick={showSidebar} className="material-icons-outlined">
-              menu
-            </span>
-          </Link>
-        </div> */}
-        <nav
-          className={
-            sidebar ? `${styles.navMenu} ${styles.active}` : `${styles.navMenu}`
-          }
-        >
-          <ul className={styles.navMenuItems} onClick={showSidebar}>
-            {/* <li className={styles.navbarToggle}>
-              <Link to="#" className={styles.menuBars}>
-                <span className="material-icons-outlined">close</span>{" "}
-              </Link>
-            </li> */}
+        <nav className={`${styles.navMenu}`}>
+          <ul className={styles.navMenuItems}>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={styles.navItem}>

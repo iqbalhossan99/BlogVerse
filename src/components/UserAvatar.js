@@ -18,7 +18,9 @@ const UserAvatar = ({ username, userPhoto, createdAt }) => {
         <span className={styles.postDate}>{postUploadedTime}</span>
       </div>
       <div className="avatarRight">
-        <span className="material-icons-outlined">more_horiz</span>
+        <span className={`material-icons-outlined ${styles.viewIcon}`}>
+          more_horiz
+        </span>
       </div>
     </div>
   );

@@ -5,19 +5,26 @@ import CommentBox from "./CommentBox";
 import Comments from "./Comments";
 import Post from "./Post";
 import styles from "../styles/SinglePost.module.css";
-import { useParams } from "react-router-dom";
+import LeftSidebar from "./LeftSidebar";
+import RightSidebar from "./RightSidebar";
 
 const SinglePost = () => {
   const { post } = useSinglePost();
   // console.log(post);
   return (
-    <div className={styles.singlePost}>
-      <Post post={post} singlePost="singlePost" />
-      <section className={styles.commentSection}>
-        <CommentBox />
-        <Comments />
-      </section>
-    </div>
+    <>
+      <div className={styles.singlePostContainer}>
+        <LeftSidebar />
+        <div className={styles.singlePost}>
+          <Post post={post} singlePost="singlePost" />
+          <section className={styles.commentSection}>
+            <CommentBox />
+            <Comments />
+          </section>
+        </div>
+        <RightSidebar />
+      </div>
+    </>
   );
 };
 

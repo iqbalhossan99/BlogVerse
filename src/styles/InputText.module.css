@@ -28,3 +28,9 @@
     justify-content: center;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 600px) {
+    .inputText{
+      /* display: none; */
+    }
+  }

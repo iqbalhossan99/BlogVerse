@@ -1,42 +1,16 @@
-.navbar {
-    background-color: #060b26;
-    height: 80px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    color: #fff;
-    border-radius: 5px;
-  }
-  
-  .menuBars {
-    margin-left: 2rem;
-    font-size: 2rem;
-    background: none;
-  }
-
   .leftSidebar{
     flex: 2;
   }
   
   .navMenu {
-    /* background-color: #060b26; */
     background-color: #fff;
-    /* width: 250px; */
+    width: 250px;
     height: 100vh;
     display: flex;
     justify-content: center;
-    /* position: fixed; */
-    top: 0;
-    /* left: -100%; */
-    transition: 850ms;
     border-radius: 5px;
   }
-  
-  .navMenu.active {
-    left: 0;
-    transition: 350ms;
-  }
-  
+    
   .navItem {
     display: flex;
     justify-content: start;
@@ -66,7 +40,7 @@
   }
   
   .navMenuItems {
-    width: 100%;
+    width: 100%; 
   }
   
   .navbarToggle {
@@ -78,4 +52,14 @@
     align-items: center;
   }
   
- 
+  @media only screen and (max-width: 600px) {
+    .leftSidebar{
+      display: none;
+    }
+    .navMenu{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+    }
+  }

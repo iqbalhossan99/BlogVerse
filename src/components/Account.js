@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import auth from "../firebase.init";
 import styles from "../styles/Account.module.css";
+import Button from "./Button";
 
 const Account = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -12,6 +13,11 @@ const Account = () => {
     <div className={styles.account}>
       {user ? (
         <>
+          <Link to="/createPost" className={styles.createBtn}>
+            <Button>
+              <span>Create Post</span>
+            </Button>
+          </Link>
           <span
             style={{ color: "#0A8BFE" }}
             className="material-icons-outlined"
@@ -19,6 +25,7 @@ const Account = () => {
           >
             account_circle
           </span>
+
           <span style={{ color: "#0A8BFE" }}>{user?.displayName}</span>
           <p
             style={{

@@ -52,17 +52,14 @@ const SocialLogin = () => {
     <div className="block">
       <Button
         onClick={handleSignInWithGoogle}
-        style={{ width: "100%", marginTop: "10px" }}
+        className="marginTop-10 width-100"
       >
         <span className={styles.socialIcon}>
           <FcGoogle />
         </span>
         <span className={styles.socialName}> Google Sign In</span>
       </Button>
-      <Button
-        onClick={handleFacebookLogin}
-        style={{ width: "100%", marginTop: "10px" }}
-      >
+      <Button onClick={handleFacebookLogin} className="marginTop-10 width-100">
         <span className={styles.socialIcon}>
           <FaFacebook />
         </span>
@@ -70,7 +67,7 @@ const SocialLogin = () => {
       </Button>
       <Button
         onClick={handleSignInWithGithub}
-        style={{ width: "100%", marginTop: "10px" }}
+        className="marginTop-10 width-100"
       >
         <span className={styles.socialIcon}>
           <FaGithub className={styles.gitHup} />

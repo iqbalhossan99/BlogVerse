@@ -17,3 +17,10 @@
   .account .accountLink:hover {
     color: var(--bgBlue);
   }
+
+
+  @media only screen and (max-width: 600px) {
+    .createBtn{
+      display: none;
+    }
+  }

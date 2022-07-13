@@ -32,7 +32,6 @@ const Login = () => {
       <div className="column">
         <Illustration />
         <div>
-          {" "}
           <form onSubmit={handleSignIn}>
             <InputText
               type="text"
@@ -48,11 +47,12 @@ const Login = () => {
               required
               placeholder="Enter password"
               icon="lock"
+              className="marginTop-10"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <Button style={{ width: "100%", marginTop: "10px" }}>
+            <Button className="marginTop-10 width-100">
               <span>Log In</span>
             </Button>
             <div className="info">

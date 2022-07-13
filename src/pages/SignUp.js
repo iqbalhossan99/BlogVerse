@@ -57,6 +57,7 @@ const SignUp = () => {
               required
               placeholder="Enter email"
               icon="alternate_email"
+              className="marginTop-10"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -66,6 +67,7 @@ const SignUp = () => {
               required
               placeholder="Enter password"
               icon="lock"
+              className="marginTop-10"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -75,6 +77,7 @@ const SignUp = () => {
               required
               placeholder="Confirm password"
               icon="lock_clock"
+              className="marginTop-10 marginBottom-5"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
@@ -85,10 +88,10 @@ const SignUp = () => {
               value={agree}
               onChange={(e) => setAgree(e.target.value)}
             />
-            <Button style={{ width: "100%", marginTop: "10px" }}>
+            <Button className="marginTop-10 width-100">
               <span>Sign Up</span>
             </Button>
-            <div className="info">
+            <div className="info ">
               Already have an account? <Link to="/login">Login</Link> instead.
             </div>
           </form>

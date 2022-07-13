@@ -1,9 +1,14 @@
-
+.singlePostContainer{
+    display: flex;
+    gap: 10px
+    ;
+}
 .singlePost{
+    flex: 5;
     background: #fff;
     border-radius: 5px;
 }
 .commentSection{
-    padding: 0 100px 10px 100px;
+    padding: 0 10% 10px 10%;
 
 }

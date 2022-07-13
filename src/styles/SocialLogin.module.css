@@ -8,6 +8,10 @@ flex align-items-center w-full mt-3 py-2 border rounded-full
     /* padding:  0 8px ; */
     border-radius: 50%;
 }
+.socialBtn{
+    width: 100%;
+    margin-top: 10px;
+}
 .socialIcon{
     flex: 0;
 }
