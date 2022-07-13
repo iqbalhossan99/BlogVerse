@@ -16,6 +16,7 @@ const CreatePost = () => {
   const [desc, setDesc] = useState("");
 
   const username = user?.displayName;
+  const userPhoto = user?.photoURL;
   if (loading) {
     return;
   }
@@ -27,8 +28,9 @@ const CreatePost = () => {
       title: postTitle,
       img: img,
       category: category,
-      username: username,
       desc: desc,
+      username: username,
+      userPhoto: userPhoto,
     };
 
     // handle the error

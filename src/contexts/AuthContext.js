@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-  //   Login
+  // login
   const signIn = async (email, password) => {
     await signInWithEmailAndPassword(email, password);
     await swal({

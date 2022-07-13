@@ -6,11 +6,9 @@ import auth from "../firebase.init";
 import styles from "../styles/Comments.module.css";
 import Button from "./Button";
 import swal from "sweetalert";
-import useComments from "../hooks/useComments";
 
 const CommentBox = () => {
-  const [user, loading, error] = useAuthState(auth);
-  const { comments } = useComments([]);
+  const [user, loading] = useAuthState(auth);
   const [newComment, setNewComment] = useState("");
   const { id } = useParams();
 
@@ -18,8 +16,9 @@ const CommentBox = () => {
     return;
   }
   const username = user?.displayName;
-  // console.log(comments);
+  // console.log(user);
 
+  // create comment
   const handleComment = (e) => {
     e.preventDefault();
 

@@ -17,7 +17,7 @@ const useComments = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [comments]);
+  }, []);
   return { comments };
 };
 

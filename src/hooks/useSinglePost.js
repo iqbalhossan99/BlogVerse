@@ -14,7 +14,7 @@ const useSinglePost = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [post]);
+  }, []);
   return { post };
 };
 
