@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import noAvatar from "../assets/images/noAvatar.png";
@@ -6,13 +7,86 @@ import LeftSidebar from "../components/LeftSidebar";
 import styles from "../styles/Profile.module.css";
 import RightSidebar from "../components/RightSidebar";
 import Posts from "../components/Posts";
+import Post from "../components/Post";
+import { useQuery } from "react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import swal from "sweetalert";
 
-export default function Profile() {
+const Profile = () => {
   const [user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  const email = user?.email;
+
+  const url = `http://localhost:8000/api/posts/userposts/${email}`;
+
+  const {
+    data: userPosts,
+    isFetching,
+    refetch,
+  } = useQuery("order", () => fetch(url).then((res) => res.json()));
+
+  console.log(userPosts);
+
+  if (loading || isFetching) {
+    return <h3>Loading</h3>;
+  }
+  console.log(email, userPosts);
+
+  const handleDeleteBtn = async (id) => {
+    const decision = await swal({
+      title: "Are you sure want to delete this item!",
+      buttons: ["Oh noez!", true],
+    });
+    if (decision) {
+      fetch(`http://localhost:8000/api/posts/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          refetch();
+        });
+    }
+  };
+
+
+    fetch(`http://localhost:8000/api/posts/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(createPost),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch();
+      });
+  };
+
+  // useEffect(() => {
+  //   const url = `http://localhost:8000/api/posts/userposts/${email}`;
+
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setUserPosts(data);
+  //       console.log(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   if (loading) {
     return;
   }
+
   return (
     <>
       <div className={styles.profile}>
@@ -36,11 +110,22 @@ export default function Profile() {
             </div>
           </div>
           <div className={styles.profileRightBottom}>
-            <Posts />
+            <div className={styles.userPosts}>
+              {userPosts.map((post) => (
+                <Post
+                  key={post._id}
+                  post={post}
+                  userPost="userPost"
+                  handleDeleteBtn={() => handleDeleteBtn(post._id)}
+                />
+              ))}
+            </div>
             <RightSidebar />
           </div>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default Profile;

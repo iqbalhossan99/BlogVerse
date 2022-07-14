@@ -4,7 +4,7 @@ import styles from "../styles/Post.module.css";
 import Like from "./Like";
 import { Link } from "react-router-dom";
 
-const Post = ({ post, singlePost }) => {
+const Post = ({ post, singlePost, userPost, handleDeleteBtn }) => {
   const { title, desc, img, username, userPhoto, createdAt } = post;
   // console.log(post);
 
@@ -14,6 +14,8 @@ const Post = ({ post, singlePost }) => {
         username={username}
         userPhoto={userPhoto}
         createdAt={createdAt}
+        userPost={userPost}
+        handleDeleteBtn={handleDeleteBtn}
       />
       <Link to={`/posts/${post._id}`}>
         <div>

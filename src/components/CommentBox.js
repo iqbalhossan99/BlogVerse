@@ -72,7 +72,7 @@ const CommentBox = () => {
           type="text"
           onChange={(e) => setNewComment(e.target.value)}
         />
-        <Button>
+        <Button className="marginTop-10">
           <span>Submit</span>
         </Button>
       </form>

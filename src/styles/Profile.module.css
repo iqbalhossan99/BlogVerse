@@ -50,3 +50,7 @@
     gap: 10px;
     padding-left: 10px;
 }
+
+.userPosts{
+    flex: 5;
+}
