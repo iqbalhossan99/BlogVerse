@@ -25,8 +25,9 @@ const Account = () => {
           >
             account_circle
           </span>
-
-          <span style={{ color: "#0A8BFE" }}>{user?.displayName}</span>
+          <Link to="/profile">
+            <span style={{ color: "#0A8BFE" }}>{user?.displayName}</span>
+          </Link>
           <p
             style={{
               display: "flex",

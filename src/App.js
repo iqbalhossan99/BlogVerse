@@ -10,6 +10,7 @@ import SinglePost from "./components/SinglePost";
 import SearchResults from "./pages/SearchResults.js";
 import CreatePost from "./pages/CreatePost.js";
 import { SearchProvider } from "./contexts/SearchContext.js";
+import Profile from "./pages/Profile.js";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/posts/:id" exact element={<SinglePost />} />
             <Route path="/searchPosts" exact element={<SearchResults />} />
             <Route path="/createPost" exact element={<CreatePost />} />
+            <Route path="/profile" exact element={<Profile />} />
             <Route path="/login" exact element={<Login />} />
             <Route path="/signUp" exact element={<SignUp />} />
           </Routes>

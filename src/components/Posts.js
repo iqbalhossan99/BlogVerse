@@ -9,7 +9,7 @@ const Posts = () => {
 
   const { filterPosts } = useSearch();
 
-  console.log(filterPosts.length);
+  // console.log(filterPosts.length);
 
   // console.log(posts);
   return (

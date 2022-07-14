@@ -15,6 +15,7 @@ const CreatePost = () => {
   const [createdPost, setCreatedPost] = useState({});
   const [desc, setDesc] = useState("");
 
+  const userEmail = user?.email;
   const username = user?.displayName;
   const userPhoto = user?.photoURL;
   if (loading) {
@@ -30,6 +31,7 @@ const CreatePost = () => {
       category: category,
       desc: desc,
       username: username,
+      email: userEmail,
       userPhoto: userPhoto,
     };
 
@@ -95,15 +97,26 @@ const CreatePost = () => {
           required
           onChange={(e) => setCategory(e.target.value)}
         />
+
         <InputText
           className="marginTop-10"
           type="text"
           placeholder="username"
-          name="Category"
+          name="username"
           icon="person"
           required
           value={user?.displayName}
           disabled={user?.displayName}
+        />
+        <InputText
+          className="marginTop-10"
+          type="text"
+          placeholder="email address"
+          name="email"
+          icon="email"
+          required
+          value={user?.email}
+          disabled={user?.email}
         />
         <TextArea
           placeholder="Description..."
@@ -111,6 +124,7 @@ const CreatePost = () => {
           required
           onChange={(e) => setDesc(e.target.value)}
         />
+
         <Button className="marginTop-10">
           <span>Publish</span>
         </Button>
