@@ -22,6 +22,7 @@ const App = () => {
             <Route path="/posts/:id" exact element={<SinglePost />} />
             <Route path="/searchPosts" exact element={<SearchResults />} />
             <Route path="/createPost" exact element={<CreatePost />} />
+            <Route path="/post/:id" exact element={<CreatePost />} />
             <Route path="/profile" exact element={<Profile />} />
             <Route path="/login" exact element={<Login />} />
             <Route path="/signUp" exact element={<SignUp />} />

@@ -5,10 +5,10 @@ const useComments = () => {
   const [comments, setComments] = useState([]);
 
   const { id } = useParams();
-  // console.log(comments);
+
+  const url = `http://localhost:8000/api/posts/${id}`;
 
   useEffect(() => {
-    const url = `http://localhost:8000/api/posts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

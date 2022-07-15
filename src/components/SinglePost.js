@@ -10,7 +10,7 @@ import RightSidebar from "./RightSidebar";
 
 const SinglePost = () => {
   const { post } = useSinglePost();
-  // console.log(post);
+
   return (
     <>
       <div className={styles.singlePostContainer}>

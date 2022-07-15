@@ -4,10 +4,12 @@ import { format } from "timeago.js";
 import styles from "../styles/UserAvatar.module.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
+import useSinglePost from "../hooks/useSinglePost";
 
 const UserAvatar = ({
+  postId,
   username,
   userPhoto,
   createdAt,
@@ -15,6 +17,7 @@ const UserAvatar = ({
   handleDeleteBtn,
 }) => {
   const postUploadedTime = format(createdAt);
+  const { post } = useSinglePost();
 
   return (
     <div className={styles.avatar}>
@@ -30,12 +33,14 @@ const UserAvatar = ({
       <div className="avatarRight">
         {userPost && (
           <>
-            <span
-              // onClick={handleDeleteBtn}
-              className={`material-icons-outlined marginRight-10 ${styles.viewIcon}`}
-            >
-              edit
-            </span>
+            <Link to={`/post/${postId}`}>
+              <span
+                // onClick={handleDeleteBtn}
+                className={`material-icons-outlined marginRight-10 ${styles.viewIcon}`}
+              >
+                edit
+              </span>
+            </Link>
             <span
               onClick={handleDeleteBtn}
               className={`material-icons-outlined marginRight-10 ${styles.viewIcon}`}

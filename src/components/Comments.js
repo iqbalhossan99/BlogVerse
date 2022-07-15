@@ -4,7 +4,6 @@ import styles from "../styles/Comments.module.css";
 
 const Comments = () => {
   const { comments } = useComments();
-  //   console.log(comments);
   return (
     <div>
       {comments?.map((comment, i) => (

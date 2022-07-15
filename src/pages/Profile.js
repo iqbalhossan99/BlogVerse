@@ -6,16 +6,12 @@ import android_app from "../assets/images/android_app.jpg";
 import LeftSidebar from "../components/LeftSidebar";
 import styles from "../styles/Profile.module.css";
 import RightSidebar from "../components/RightSidebar";
-import Posts from "../components/Posts";
 import Post from "../components/Post";
 import { useQuery } from "react-query";
-import { useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
 
 const Profile = () => {
   const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate();
-  const { id } = useParams();
 
   const email = user?.email;
 
@@ -27,12 +23,9 @@ const Profile = () => {
     refetch,
   } = useQuery("order", () => fetch(url).then((res) => res.json()));
 
-  console.log(userPosts);
-
   if (loading || isFetching) {
     return <h3>Loading</h3>;
   }
-  console.log(email, userPosts);
 
   const handleDeleteBtn = async (id) => {
     const decision = await swal({
@@ -53,35 +46,6 @@ const Profile = () => {
         });
     }
   };
-
-
-    fetch(`http://localhost:8000/api/posts/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(createPost),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        refetch();
-      });
-  };
-
-  // useEffect(() => {
-  //   const url = `http://localhost:8000/api/posts/userposts/${email}`;
-
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setUserPosts(data);
-  //       console.log(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
 
   if (loading) {
     return;

@@ -11,6 +11,7 @@ const Post = ({ post, singlePost, userPost, handleDeleteBtn }) => {
   return (
     <div className={styles.postContainer}>
       <UserAvatar
+        postId={post._id}
         username={username}
         userPhoto={userPhoto}
         createdAt={createdAt}
