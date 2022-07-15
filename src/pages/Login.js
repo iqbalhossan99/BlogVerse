@@ -10,12 +10,15 @@ import InputText from "../components/InputText";
 import SocialLogin from "../components/SocialLogin";
 import { useAuth } from "../contexts/AuthContext";
 import auth from "../firebase.init";
+import useToken from "../hooks/useToken";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signIn } = useAuth();
   const [user, loading, error] = useAuthState(auth);
+  const [token] = useToken(user);
+
   const navigate = useNavigate();
 
   const handleSignIn = (e) => {
@@ -23,7 +26,7 @@ const Login = () => {
     signIn(email, password);
   };
 
-  if (user) {
+  if (token) {
     navigate("/");
   }
   return (

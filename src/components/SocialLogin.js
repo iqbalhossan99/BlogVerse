@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useSignInWithFacebook,
   useSignInWithGithub,
@@ -10,6 +10,8 @@ import auth from "../firebase.init";
 import swal from "sweetalert";
 import styles from "../styles/SocialLogin.module.css";
 import Button from "./Button";
+import useToken from "../hooks/useToken";
+import { useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -18,6 +20,8 @@ const SocialLogin = () => {
     useSignInWithGithub(auth);
   const [signInWithFacebook, facebookUser, facebookLoading, facebookError] =
     useSignInWithFacebook(auth);
+  const [token] = useToken(googleUser || githubUser || facebookUser);
+  const navigate = useNavigate();
 
   // handle error
   if (googleError || githubError || facebookError) {
@@ -28,6 +32,17 @@ const SocialLogin = () => {
       icon: "error",
     });
   }
+
+  useEffect(() => {
+    if (token) {
+      swal({
+        title: "You are log in now!",
+        text: "You clicked the button!",
+        icon: "success",
+      });
+      navigate("/");
+    }
+  }, [googleUser || githubUser || facebookUser]);
 
   // loading
   if (googleLoading || githubLoading || facebookLoading) {

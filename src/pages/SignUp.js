@@ -8,6 +8,9 @@ import { useAuth } from "../contexts/AuthContext";
 import swal from "sweetalert";
 import SocialLogin from "../components/SocialLogin";
 import Divider from "../components/Divider";
+import useToken from "../hooks/useToken";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -15,6 +18,8 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agree, setAgree] = useState("");
+  const [user, loading] = useAuthState(auth);
+  const [token] = useToken(user);
 
   const { signUp } = useAuth();
 
