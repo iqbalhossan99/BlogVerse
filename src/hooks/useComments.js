@@ -6,7 +6,7 @@ const useComments = () => {
 
   const { id } = useParams();
 
-  const url = `http://localhost:8000/api/posts/${id}`;
+  const url = `https://blog-verse.herokuapp.com/api/posts/${id}`;
 
   useEffect(() => {
     fetch(url)

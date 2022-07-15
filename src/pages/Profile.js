@@ -15,13 +15,13 @@ const Profile = () => {
 
   const email = user?.email;
 
-  const url = `http://localhost:8000/api/posts/userposts/${email}`;
+  const url = `https://blog-verse.herokuapp.com/api/posts/userposts/${email}`;
 
   const {
     data: userPosts,
     isFetching,
     refetch,
-  } = useQuery("order", () => fetch(url).then((res) => res.json()));
+  } = useQuery("posts", () => fetch(url).then((res) => res.json()));
 
   if (loading || isFetching) {
     return <h3>Loading</h3>;
@@ -33,7 +33,7 @@ const Profile = () => {
       buttons: ["Oh noez!", true],
     });
     if (decision) {
-      fetch(`http://localhost:8000/api/posts/${id}`, {
+      fetch(`https://blog-verse.herokuapp.com/api/posts/${id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",

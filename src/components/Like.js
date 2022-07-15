@@ -24,7 +24,7 @@ const Like = () => {
       likes: userId,
     };
 
-    // const url = `http://localhost:8000/api/posts/${id}/like`;
+    // const url = `https://blog-verse.herokuapp.com/api/posts/${id}/like`;
 
     // fetch(url, {
     //   method: "PUT",

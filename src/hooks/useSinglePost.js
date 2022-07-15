@@ -7,7 +7,7 @@ const useSinglePost = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const url = `http://localhost:8000/api/posts/${id}`;
+    const url = `https://blog-verse.herokuapp.com/api/posts/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPost(data))

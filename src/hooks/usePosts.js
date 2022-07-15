@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../firebase.init";
 
 const usePosts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:8000/api/posts`;
+    const url = `https://blog-verse.herokuapp.com/api/posts`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPosts(data))

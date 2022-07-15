@@ -43,7 +43,7 @@ const CreatePost = () => {
       return swal({ title: "Please try with another title!", icon: "error" });
     }
 
-    const url = `http://localhost:8000/api/posts/`;
+    const url = `https://blog-verse.herokuapp.com/api/posts/`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -85,7 +85,7 @@ const CreatePost = () => {
       userPhoto: userPhoto,
     };
 
-    const url = `http://localhost:8000/api/posts/${post._id}`;
+    const url = `https://blog-verse.herokuapp.com/api/posts/${post._id}`;
 
     fetch(url, {
       method: "PUT",

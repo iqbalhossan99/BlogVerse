@@ -16,7 +16,6 @@ const CommentBox = () => {
     return;
   }
   const username = user?.displayName;
-  // console.log(user);
 
   // create comment
   const handleComment = (e) => {
@@ -27,7 +26,7 @@ const CommentBox = () => {
       username: username,
     };
 
-    const url = `http://localhost:8000/api/posts/${id}/comment`;
+    const url = `https://blog-verse.herokuapp.com/api/posts/${id}/comment`;
 
     if (newComment === "") {
       return swal({
