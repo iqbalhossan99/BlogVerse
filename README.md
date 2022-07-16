@@ -7,8 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Live site https://blog-verse.web.app/
 
 ● Visit beautiful BlogVerse blog site and without login/register not possible to create, update and delete post
-it.
-● User also can comment on the post shared by others
+it.\
+● User also can comment on the post shared by others\
 ● And you would search a post by title and category
 
 
